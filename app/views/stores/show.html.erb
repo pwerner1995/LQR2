@@ -1,0 +1,9 @@
+<h1><%= @store.name %>'s inventory </h1>
+
+<% @store_drinks.each do |sd| %>
+    <p>Brand: <%= sd.drink.name %></p>
+    <p>Price: <%= sd.drink.price %></p>
+    <hr>
+    <br>
+
+<% end %>
