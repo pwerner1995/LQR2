@@ -3,7 +3,7 @@
 
 <hr>
 <% @stores.each do |s| %>
- <%=link_to s.location, store_path(s)%>
+ <%=link_to s.name, store_path(s)%>
  <br>
  <hr>
 <% end %>

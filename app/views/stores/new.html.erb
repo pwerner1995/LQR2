@@ -1,0 +1,22 @@
+<h1>Create a new store!</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <%= error %>
+        <br>
+        <% end %>
+        <br>
+<% end %>
+
+<div><%= form_for @store do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+ <br>
+ <%= f.label :location %>
+ <%= f.text_field :location %>
+ <br>
+ <%= f.submit %>
+<% end %></div>
+<br>
+<div>
+

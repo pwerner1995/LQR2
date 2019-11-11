@@ -1,0 +1,9 @@
+<h1>Drinks</h1>
+<br>
+
+<hr>
+<% @drinks.each do |s| %>
+ <%=link_to s.name, drink_path(s)%>
+ <br>
+ <hr>
+<% end %>
