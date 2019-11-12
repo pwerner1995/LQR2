@@ -13,13 +13,10 @@ Rails.application.routes.draw do
   get '/drinks/drinks_search', to: 'drinks#drink_search', as: 'drink_search'
   get '/drinks/beers', to: 'drinks#beers', as: 'beers'
   get '/drinks/beer_search', to: 'drinks#beer_search', as: 'beer_search'
-
   get '/drinks/wines', to: 'drinks#wines', as: 'wines'
   get '/drinks/wines_search', to: 'drinks#wine_search', as: 'wine_search'
-
   get '/drinks/liquors', to: 'drinks#liquors', as: 'liquors'
   get '/drinks/liquors_search', to: 'drinks#liquor_search', as: 'liquor_search'
-
   get '/drinks/:id', to: 'drinks#show', as: 'drink'
   
 
@@ -29,7 +26,11 @@ Rails.application.routes.draw do
   get '/', to: 'application#root', as: 'root'
   get '/home', to: 'application#home', as: 'home'
 
-  
+  resources :users, only: [:new, :show, :create]
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/sessions', to: 'sessions#delete'
+
 
 
 end

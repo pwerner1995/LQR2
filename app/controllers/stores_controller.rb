@@ -27,18 +27,6 @@ class StoresController < ApplicationController
         
     end
 
-    def edit
-
-    end
-
-    def update
-
-    end
-
-    def delete
-
-    end
-
     def store_search
         @search_results = Store.store_search(search_params)
         render :store_search_results

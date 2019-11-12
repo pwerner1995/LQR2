@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
     has_many :store_drinks
     has_many :drinks, through: :storedrinks 
+    belongs_to :user
     validates :name, presence: true
     validates :location, presence: true, uniqueness:true
 
