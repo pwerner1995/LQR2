@@ -1,6 +1,6 @@
-<%= render 'application/nav_bar' %>
+<h1> Welcome home! </h1>
 
-<h1>Drinks</h1>
+<%= render 'nav_bar' %>
 
 <%= form_with url: drink_search_path, method: :get, local:true do %>
     <p>Search drinks: <%= text_field_tag(:name, params[:search]) %></p>

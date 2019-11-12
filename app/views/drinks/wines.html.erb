@@ -1,0 +1,14 @@
+<%= render 'application/nav_bar' %>
+
+<h1>Wine here </h1>
+
+<%= form_with url: wine_search_path, method: :get, local:true do %>
+    <p>Search wines: <%= text_field_tag(:name, params[:search]) %></p>
+    <%= submit_tag "Search" %>
+    <% end %>
+    <br>
+
+<% @wines.each do |s| %>
+    <%=link_to s.name, drink_path(s)%>
+    <br>
+    <% end %>

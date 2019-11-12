@@ -10,4 +10,8 @@ class Store < ApplicationRecord
         end
     end
 
+    def self.store_search(params)
+        self.where('name LIKE ?', "%#{params[:name]}%")
+    end
+
 end

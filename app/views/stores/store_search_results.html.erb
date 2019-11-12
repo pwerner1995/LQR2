@@ -1,5 +1,4 @@
 <%= render 'application/nav_bar' %>
-
 <h1>Stores</h1>
 
 <%= form_with url: store_search_path, method: :get, local:true do %>
@@ -7,10 +6,12 @@
     <%= submit_tag "Search" %>
     <% end %>
     <br>
+    
+<strong> Results: </strong>
+<br>
+<br>
 
-<hr>
-<% @stores.each do |s| %>
- <%=link_to s.name, store_path(s)%>
- <br>
- <hr>
-<% end %>
+<% @search_results.each do |result| %>
+    <%= link_to result.name, store_path(result) %>
+    <br>
+    <% end %>

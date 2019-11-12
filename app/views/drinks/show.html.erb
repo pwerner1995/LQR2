@@ -1,7 +1,13 @@
+<%= render 'application/nav_bar' %>
+
 <h1><%= @drink.name %> </h1>
 
     <p>Brand: <%= @drink.name %></p>
-    <p>Price: <%= @drink.price %></p>
+    <p>Price: $<%= @drink.price %></p>
+    <p>Description: <%= @drink.description %></p>
+    <% if @drink.category == "BEER" %>
+        <p>Quantity: <%= @drink.quantity %> pack</p>
+    <% end %>
     <hr>
     <br>
-    <%= link_to "Back to drinks", drinks_path %>
+    <%= link_to "Back to home", home_path %>

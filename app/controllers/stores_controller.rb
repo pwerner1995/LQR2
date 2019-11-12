@@ -24,6 +24,7 @@ class StoresController < ApplicationController
         @store_drink = StoreDrink.new
         @drinks = Drink.all
         @drink = Drink.new 
+        
     end
 
     def edit
@@ -38,9 +39,19 @@ class StoresController < ApplicationController
 
     end
 
+    def store_search
+        @search_results = Store.store_search(search_params)
+        render :store_search_results
+    end
+
     private
 
     def store_params
         params.require(:store).permit(:name, :location)
     end
+
+    def search_params
+        params.permit(:name)
+    end
+
 end

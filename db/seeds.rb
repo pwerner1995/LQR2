@@ -1,14 +1,61 @@
-Drink.find_or_create_by(name: "Tito's", price: 24)
-Drink.find_or_create_by(name: "Svedka", price: 20)
-Drink.find_or_create_by(name: "Smirnoff", price: 19)
-Drink.find_or_create_by(name: "Ciroc", price: 30)
+require 'faker'
+I18n.reload!
+
+puts "deleting them"
+Drink.destroy_all
+
+puts "creating them!"
+Drink.find_or_create_by(name: "Tito's", price: 24.99, category: "LIQUOR")
+Drink.find_or_create_by(name: "Svedka", price: 20.99, category: "LIQUOR")
+Drink.find_or_create_by(name: "Smirnoff", price: 19.99, category: "LIQUOR")
+Drink.find_or_create_by(name: "Ciroc", price: 30.99, category: "LIQUOR")
+
+Drink.find_or_create_by(name: "White Claws", price: 16.99, category: "BEER")
+Drink.find_or_create_by(name: "Budweiser", price: 2.99, category: "BEER")
+Drink.find_or_create_by(name: "Truly", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Coors Light", price: 22.99, category: "BEER")
+Drink.find_or_create_by(name: "Stella Artois", price: 17.99, category: "BEER")
+Drink.find_or_create_by(name: "Modelo", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Blue Moon", price: 17.99, category: "BEER")
+Drink.find_or_create_by(name: "Peroni", price: 18.99, category: "BEER")
+Drink.find_or_create_by(name: "Miller Lite", price: 14.99, category: "BEER")
+Drink.find_or_create_by(name: "Corona", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Corona Light", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Dogfish Head", price: 16.99, category: "BEER")
+Drink.find_or_create_by(name: "Lagunitas", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Yuengling", price: 20.99, category: "BEER")
+Drink.find_or_create_by(name: "Sam Adams", price: 17.99, category: "BEER")
+Drink.find_or_create_by(name: "Heineken", price: 15.99, category: "BEER")
+Drink.find_or_create_by(name: "Bud Light Lime", price: 16.99, category: "BEER")
+Drink.find_or_create_by(name: "Brooklyn Lager", price: 17.99, category: "BEER")
+Drink.find_or_create_by(name: "Flying Dog", price: 20.99, category: "BEER")
+
+Drink.find_or_create_by(name: "La Marca Prosecco", price: 14.99, category: "WINE")
+Drink.find_or_create_by(name: "Chateau Ste. Michelle Sauvignon Blanc", price: 10.99, category: "WINE")
+Drink.find_or_create_by(name: "Veuve Clicquot Champagne Yellow Label", price: 48.99, category: "WINE")
+Drink.find_or_create_by(name: "Josh Cabernet Sauvignon", price: 13.99, category: "WINE")
+Drink.find_or_create_by(name: "Hess Appellation Chardonnay", price: 9.99, category: "WINE")
+Drink.find_or_create_by(name: "Frei Brithers Chardonnay", price: 15.99, category: "WINE")
+Drink.find_or_create_by(name: "Fritz Fisk Riesling", price: 11.99, category: "WINE")
+Drink.find_or_create_by(name: "Korbel", price: 16.99, category: "WINE")
+Drink.find_or_create_by(name: "Landmark Vineyards Chardonnay Overlook", price: 26.99, category: "WINE")
+Drink.find_or_create_by(name: "Kris Pinot Grigio", price: 15.99, category: "WINE")
+Drink.find_or_create_by(name: "Bogle Vineyards Phantom", price: 21.99, category: "WINE")
+Drink.find_or_create_by(name: "Long Barn Pinot Noir", price: 14.99, category: "WINE")
+Drink.find_or_create_by(name: "Tosca Prosecco", price: 14.99, category: "WINE")
+
 
 Store.find_or_create_by(name: "Bottle King", location:"Jersey")
 Store.find_or_create_by(name: "Wine & Spirits", location:"Flatiron")
 
-StoreDrink.find_or_create_by(drink_id:1, store_id:1)
-StoreDrink.find_or_create_by(drink_id:2, store_id:1)
-StoreDrink.find_or_create_by(drink_id:3, store_id:1)
-StoreDrink.find_or_create_by(drink_id:4, store_id:1)
-StoreDrink.find_or_create_by(drink_id:1, store_id:2)
-StoreDrink.find_or_create_by(drink_id:3, store_id:2)
+
+puts "updating description"
+ Drink.all.each do |drink|
+    drink.update(description: Faker::ChuckNorris.fact)
+ end
+
+ puts "updating quantity"
+ Drink.beers.each do |beer|
+    beer.update(quantity: 12)
+ end
+ 

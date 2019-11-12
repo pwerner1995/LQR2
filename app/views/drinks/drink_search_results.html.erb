@@ -8,14 +8,11 @@
     <% end %>
     <br>
 
-<hr>
+<strong> Results: </strong>
 <br>
-<%= "All Drinks" %>
 <br>
-<hr>
-<% @drinks.each do |s| %>
- <%=link_to s.name, drink_path(s)%>
- <br>
- <hr>
-<% end %>
 
+<% @search_results.each do |result| %>
+    <%= link_to result.name, drink_path(result) %>
+    <br>
+    <% end %>
