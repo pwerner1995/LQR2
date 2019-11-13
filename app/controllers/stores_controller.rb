@@ -9,7 +9,8 @@ class StoresController < ApplicationController
     end
 
     def create
-        @store = Store.new(store_params)
+        @store = Store.new(store_params) 
+        @store.update(user_id: session[:user_id])
         if @store.save
             redirect_to store_path(@store)
         else 
@@ -39,8 +40,7 @@ class StoresController < ApplicationController
     def inventory_search 
         @search_results = Store.inventory_search(inventory_search_params)
         render :inventory_search_results
-    end
-
+    end 
 
     private
 

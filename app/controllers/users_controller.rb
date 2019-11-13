@@ -14,16 +14,6 @@ class UsersController < ApplicationController
         end
     end
     
-    def create_store
-       @user = User.find(params[:id])
-    end
-
-    def add_store
-        session[:store_name] = params[:store_name]
-        session[:location] = params[:location]
-      
-        redirect_to login_path
-    end     
 
     private 
 

@@ -9,9 +9,13 @@
     <% end %>
     <br>
 
+<%= link_to "Add a store", new_store_path %>
+
+
 <hr>
 <% @stores.each do |s| %>
  <%=link_to s.name, store_path(s)%>
  <br>
  <hr>
 <% end %>
+
