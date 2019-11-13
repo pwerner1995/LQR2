@@ -23,7 +23,8 @@ class StoresController < ApplicationController
         @store = Store.find(params[:id])
         @store_drinks = @store.store_drinks
         @store_drink = StoreDrink.new
-        @drinks = Drink.all
+        @drinks = Drink.all.sort{ |a, b| a.name <=> b.name }
+       
         @drink = Drink.new 
         
     end

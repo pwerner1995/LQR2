@@ -20,6 +20,12 @@ class DrinksController < ApplicationController
 
     def show 
         @drink = Drink.find(params[:id])
+        @store_drink = StoreDrink.new
+        if session[:user_id]
+            @user = User.find(session[:user_id])
+            @stores = @user.stores
+        end
+        
     end
 
     def beers

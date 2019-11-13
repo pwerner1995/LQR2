@@ -8,6 +8,23 @@
     <% if @drink.category == "BEER" %>
         <p>Quantity: <%= @drink.quantity %> pack</p>
     <% end %>
+    <% if !@drink.stores.empty? %>
+        <p>Available at:</p>
+        <% @drink.stores.each do |store| %>
+            <%= link_to "#{store.name}", store_path(store) %>
+        <% end %>
+    <% else %>
+    <p> Not available in stores near you </p>
+    <% end %>
     <hr>
+    
+    <% if session[:user_id] %>
+    <%= form_with model: @store_drink, :url => create_store_drink_path, method: :post do |f| %>
+        <%= f.collection_select :store_id, @stores, :id, :name %>
+        <%= f.hidden_field :drink_id, :value => @drink.id%>
+        <%= f.submit "Add Drink to Inventory"%>  
+        <% end %>
+    <% end %>
+
     <br>
     <%= link_to "Back to home", home_path %>

@@ -38,4 +38,13 @@ class Drink < ApplicationRecord
         self.where('name LIKE ?', "%#{params[:name]}%")
     end
 
+    def stores
+       @sd= StoreDrink.all.select do |sd|
+            sd.drink == self   
+       end
+       @sd.map do |sd|
+        sd.store
+       end
+    end
+
 end
