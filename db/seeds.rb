@@ -43,6 +43,13 @@ Drink.find_or_create_by(name: "Kris Pinot Grigio", price: 15.99, category: "WINE
 Drink.find_or_create_by(name: "Bogle Vineyards Phantom", price: 21.99, category: "WINE")
 Drink.find_or_create_by(name: "Long Barn Pinot Noir", price: 14.99, category: "WINE")
 Drink.find_or_create_by(name: "Tosca Prosecco", price: 14.99, category: "WINE")
+Drink.find_or_create_by(name: "Frei Brothers Merlot", price: 19.99, category: "WINE")
+Drink.find_or_create_by(name: "Joel Gott Cabernet Sauvignon", price: 18.99, category: "WINE")
+Drink.find_or_create_by(name: "Silver Palm Sauvignon Blanc", price: 16.99, category: "WINE")
+Drink.find_or_create_by(name: "Moet & Chandon Champagne Brut Imperial", price: 59.99, category: "WINE")
+Drink.find_or_create_by(name: "Duckhorn Napa Cabernet Sauvignon", price: 84.99, category: "WINE")
+Drink.find_or_create_by(name: "Freixenet Caba Crut Cordon Negro", price: 4.99, category: "WINE")
+Drink.find_or_create_by(name: "Yellow Tail Merlot", price: 16.99, category: "WINE")
 
 
 Store.find_or_create_by(name: "Bottle King", location:"Jersey")

@@ -32,6 +32,16 @@ class StoresController < ApplicationController
         render :store_search_results
     end
 
+    def inventory
+        @stores = Store.your_stores(session[:user_id])
+    end
+
+    def inventory_search 
+        @search_results = Store.inventory_search(inventory_search_params)
+        render :inventory_search_results
+    end
+
+
     private
 
     def store_params
@@ -40,6 +50,10 @@ class StoresController < ApplicationController
 
     def search_params
         params.permit(:name)
+    end
+
+    def inventory_search_params
+        params.permit(:name, :user_id)
     end
 
 end

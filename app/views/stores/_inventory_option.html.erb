@@ -1,0 +1,23 @@
+
+<% if !@store_drinks.empty? %>
+    <% @store_drinks.each do |sd| %>
+        <p>Brand: <%= sd.drink.name %></p>
+        <p>Price: <%= sd.drink.price %></p>
+        <%= link_to "Delete drink", delete_store_drink_path(StoreDrink.find_by(drink_id: sd.drink, store_id: @store.id)) %>
+        <hr>
+        <br>
+    <% end %>
+<% else %>
+    <%= "#{@store.name} has no inventory" %>
+    <br>
+<% end %>
+<br>
+
+    <%= form_with model: @store_drink, :url => create_store_drink_path, method: :post do |f| %>
+        <%= f.collection_select :drink_id, @drinks, :id, :name %>
+        <%= f.hidden_field :store_id, :value => @store.id%>
+        <%= f.submit "Add Drink to Inventory"%>  
+
+<% end %>
+
+

@@ -1,0 +1,18 @@
+<h1> Create store </h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style = "color:red"><%= error %></p>
+        <% end %>
+<% end %>
+
+<%= form_tag add_store_path do %>
+    <%= label_tag :store_name %>
+    <%= text_field_tag :store_name %>
+    <br>
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+    <br>
+    <%= submit_tag "Add your store" %>
+    <% end %>
+

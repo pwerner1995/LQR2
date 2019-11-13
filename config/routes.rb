@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/stores/new', to: 'stores#new', as: 'new_store'
   post '/stores', to: 'stores#create'
   get '/stores/stores_search', to: 'stores#store_search', as: 'store_search'
+  get '/stores/inventory', to: 'stores#inventory', as: 'inventory'
+  get '/stores/inventory_search', to: 'stores#inventory_search', as: 'inventory_search'
   get '/stores/:id', to: 'stores#show', as: 'store'
   
 
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create', as: 'sessions'
   delete '/sessions', to: 'sessions#delete'
 
-
-
+  get '/users/create_store/:id', to: 'users#create_store', as: 'create_store'
+  post '/users/add_store', to: 'users#add_store', as: 'add_store'
+  
 end

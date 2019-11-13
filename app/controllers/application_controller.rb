@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :loggedin?
 
-
     def root 
         @drinks = Drink.all.sort{ |a, b| a.name <=> b.name }
         redirect_to home_path
@@ -15,10 +14,12 @@ class ApplicationController < ActionController::Base
     def current_user
       if session[:user_id]
         User.find(session[:user_id])
+        # session[:store_id] = Store.find_by(user_id: session[:user_id])
       end
     end
 
     def loggedin?
+      
       !!current_user
     end
 
