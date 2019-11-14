@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <title>LQR2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,12 +12,16 @@
   </head>
 
   <body>
-  <div class = "container" >
+
+  
+  <div class = "container" > 
+  <div class ="box"> <div class="logo" style = "color:white; font-family: 'Petit Formal Script', cursive;"> LQR </div>
   <% if loggedin? %>
-    <%= link_to "Log out", sessions_path, method: :delete %>
+    <div class="login"><%= link_to "Log out", sessions_path, method: :delete %></div>
   <% else %>
-    <%= link_to "Login", login_path %>
+    <div class="login"><%= link_to "Login", login_path %></div>
   <% end %>
+  </div>
   <br>
     <%= yield %>
   </div>

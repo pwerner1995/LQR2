@@ -16,3 +16,112 @@
 
  @import "bootstrap"; 
  
+
+
+ body {
+     margin-top: 80px;
+     background-image: url(bookshelf.jpg);
+     
+ }
+ nav {
+    z-index: 10;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    background-color: rgb(145, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Kaushan Script', cursive;
+}
+ 
+nav a {
+
+    z-index: 10;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-top: solid white 2px;
+    border-left: solid white 2px;
+    border-right: solid white 2px;
+    transition: transform 1s;
+    width: 20em;
+    text-align: center;
+ 
+   }
+
+.box {    
+    font-family: 'Kaushan Script', cursive;
+    .logo{
+        font-family: 'Kaushan Script', cursive;
+        z-index: 10;
+        position: fixed;   
+        top: 0px;
+        bottom: 700px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: rgb(145, 0, 0);
+        display: flex;
+        border-left: solid white 2px;
+        border-right: solid white 2px;
+        font-family: sans-serif;
+        opacity: 0.8;
+      
+        }
+
+    .login{
+        font-family: 'Kaushan Script', cursive;
+        z-index: 10;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 30px;
+    }
+    .login a {
+        color: white
+    }
+}
+
+.centering {
+    font-family: 'Kaushan Script', cursive;
+    margin: 0 auto;
+    width: 50%; 
+}
+
+.card{
+    font-family: 'Kaushan Script', cursive;
+   
+    background-image: url(titos.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.55;
+    display: flex;
+    justify-content: center;
+    margin: 5px ;
+    height: 300px;
+    width: 300px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.card a {
+    color: black;
+}
+.card-container {
+    font-family: 'Kaushan Script', cursive;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.show {
+    color: white;
+}
+
+.show a {
+    color: white;
+}

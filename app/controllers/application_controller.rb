@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
     def authorize
       redirect_to login_path unless loggedin?
     end
+
 end

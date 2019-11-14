@@ -1,24 +1,26 @@
-<h1> Login here </h1>
+<div class = "centering">
+    <h1> Login here </h1>
 
-<% if flash[:alert] %>
-    <% flash[:alert].each do |error| %>
-        <%= error %>
-        <br>
-        <% end %>
-        <br>
-<% end %>
-
-<%= form_tag sessions_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <br>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <br>
-    <%= submit_tag "Log into account" %>
+    <% if flash[:alert] %>
+        <% flash[:alert].each do |error| %>
+            <%= error %>
+            <br>
+            <% end %>
+            <br>
     <% end %>
 
-<br>
-<%= link_to "Create an account", new_user_path %>
-<br>
-<%= link_to "Continue as guest", home_path %>
+    <%= form_tag sessions_path do %>
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+        <br>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+        <br>
+        <%= submit_tag "Log into account" %>
+        <% end %>
+
+    <br>
+    <%= link_to "Create an account", new_user_path %>
+    <br>
+    <%= link_to "Continue as guest", home_path %>
+</div>

@@ -1,19 +1,27 @@
+
 <% if loggedin? %>
+<nav>
+
     <%=link_to "Home", home_path %>
-    <%= " | " %>
+  
     <%=link_to "Inventory", inventory_path %>
-    <%= " | " %>
+
     <%=link_to "Stores", stores_path %>
-    <br>
+   
+</nav>
+
 <% else %>
+<nav>
+    
     <%=link_to "Home", home_path %>
-    <%= " | " %>
+  
     <%=link_to "Beer", beers_path %>
-    <%= " | " %>
+    
     <%=link_to "Wine", wines_path %>
-    <%= " | " %>
+  
     <%=link_to "Liquor", liquors_path %>
-    <%= " | " %>
+   
     <%=link_to "Stores", stores_path %>
-    <br>
+  
+</nav>
 <% end %>
