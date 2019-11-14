@@ -1,6 +1,6 @@
 <%= render 'application/nav_bar' %>
 <div class= "show">
-<div style= "color: white"><h1><%= @store.name %>'s inventory </h1></div>
+<div style= "color: white"><h3><%= @store.name %>'s inventory </h3></div>
 <br>
 <% if session[:user_id] == @store.user_id %>
     <%= render 'inventory_option' %>
@@ -9,7 +9,7 @@
         <% @store_drinks.each do |sd| %>
           <div style= "color: white; border-top: solid white 2px;"></div>
             <div style= "color: white"><p>Brand: <%= sd.drink.name %></p></div>
-            <div style= "color: white"><p>Price: <%= sd.drink.price %></p></div>
+            <div style= "color: white"><p>Price: $<%= sd.drink.price %></p></div>
             <hr>
            
         <% end %>

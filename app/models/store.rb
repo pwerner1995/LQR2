@@ -25,4 +25,19 @@ class Store < ApplicationRecord
         self.where('name LIKE ? AND user_id = ?', "%#{params[:name]}%", "#{params[:user_id]}")
     end
 
+    def api
+        client = GoogleSearchResults.new(q:"#{self.name} liqour", tbm:"isch", serp_api_key: "e35522f2e24cc87ff79ad525763b1e0ed3983f19c268a2750c65eb7f1444d1d6")
+        hash_results = client.get_hash
+        self.update(image: hash_results[:images_results][0][:thumbnail])
+    end
+
+    def self.api     
+        Store.all.each do |store|
+            client = GoogleSearchResults.new(q:"#{store.name} liqour", tbm:"isch", serp_api_key: "e35522f2e24cc87ff79ad525763b1e0ed3983f19c268a2750c65eb7f1444d1d6")
+            hash_results = client.get_hash
+            store.update(image: hash_results[:images_results][0][:thumbnail])
+
+        end
+    end
+
 end

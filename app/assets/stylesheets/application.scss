@@ -102,23 +102,24 @@ nav a {
 
 .card{
     font-family: 'Kaushan Script', cursive;
-   
-    background-image: url(titos.jpeg);
+
+
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.55;
     display: flex;
     justify-content: center;
     margin: 5px ;
-    height: 300px;
+    margin-bottom: 25px;
+    height: 350px;
     width: 300px;
-    padding-top: 100px;
-    text-align: center;
+    padding-top: 0px;
+    text-align: left;
 }
 
 .card a {
-    color: black;
-    font-size: 1.5em;
+    color: red;
+    font-size: 1.2em;
 }
 .card-container {
     font-family: 'Kaushan Script', cursive;
@@ -131,7 +132,7 @@ nav a {
 .show {
     color: white;
     font-family: 'Kaushan Script', cursive;
-    font-size: 1.5em;
+    font-size: 1.0em;
     
 }
 
