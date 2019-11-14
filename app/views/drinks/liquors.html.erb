@@ -1,9 +1,9 @@
 <%= render 'application/nav_bar' %>
 
-<div style= "color: white"><h1>Liquor here </h1></div>
+<div style= "color: white; font-family: 'Kaushan Script', cursive; font-size: 1.3em;"><h1>Liquor here </h1></div>
 
 <%= form_with url: liquor_search_path, method: :get, local:true do %>
-    <div style= "color: white"><p>Search liquors: <%= text_field_tag(:name, params[:search]) %></p></div>
+    <div style= "color: white; font-family: 'Kaushan Script', cursive; font-size: 1.3em;"><p>Search liquors: <%= text_field_tag(:name, params[:search]) %></p></div>
     <%= submit_tag "Search" %>
     <% end %>
     <br>

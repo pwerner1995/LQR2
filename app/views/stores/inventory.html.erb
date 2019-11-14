@@ -1,5 +1,6 @@
 <%= render 'application/nav_bar' %>
 <div class= "show">
+<br>
 <h1>Your Stores</h1>
 
 <%= form_with url: inventory_search_path, method: :get, local:true do %>
@@ -8,7 +9,8 @@
     <%= submit_tag "Search" %>
     <% end %>
     <br>
-
+<div style= "color: white; border-top: solid white 2px;"></div>
+<br>
 <%= link_to "Add a store", new_store_path %>
 
 

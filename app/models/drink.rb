@@ -49,7 +49,7 @@ class Drink < ApplicationRecord
     end
 
     def api
-        client = GoogleSearchResults.new(q:"#{self.name}", tbm:"isch", serp_api_key: "e35522f2e24cc87ff79ad525763b1e0ed3983f19c268a2750c65eb7f1444d1d6")
+        client = GoogleSearchResults.new(q:"#{self.name} liquor", tbm:"isch", serp_api_key: "e35522f2e24cc87ff79ad525763b1e0ed3983f19c268a2750c65eb7f1444d1d6")
         hash_results = client.get_hash
         self.update(image: hash_results[:images_results][0][:thumbnail])
     end
