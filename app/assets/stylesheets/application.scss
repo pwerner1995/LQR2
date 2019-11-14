@@ -52,6 +52,7 @@ nav a {
 
 .box {    
     font-family: 'Kaushan Script', cursive;
+    
     .logo{
         font-family: 'Kaushan Script', cursive;
         z-index: 10;
@@ -71,6 +72,7 @@ nav a {
         }
 
     .login{
+        
         font-family: 'Kaushan Script', cursive;
         z-index: 10;
         display: flex;
@@ -91,6 +93,13 @@ nav a {
     width: 50%; 
 }
 
+.centering a {
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
 .card{
     font-family: 'Kaushan Script', cursive;
    
@@ -109,6 +118,7 @@ nav a {
 
 .card a {
     color: black;
+    font-size: 1.5em;
 }
 .card-container {
     font-family: 'Kaushan Script', cursive;
@@ -120,8 +130,26 @@ nav a {
 
 .show {
     color: white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5em;
+    
 }
 
 .show a {
     color: white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 0.9em;
+}
+
+.label-style {
+    color: white !important;
+
+}
+
+.label-class {
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+
 }

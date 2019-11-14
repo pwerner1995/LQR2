@@ -1,4 +1,4 @@
-
+<div class= "show">
 <% if !@store_drinks.empty? %>
     <% @store_drinks.each do |sd| %>
         <p>Brand: <%= sd.drink.name %></p>
@@ -19,5 +19,4 @@
         <%= f.submit "Add Drink to Inventory"%>  
 
 <% end %>
-
-
+</div>

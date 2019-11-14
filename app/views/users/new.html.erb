@@ -1,5 +1,5 @@
 <div class = "centering">
-<h1> Create user account </h1>
+<div style= "color:white"><h1 style = "display: flex; justify-content: center;"> Create user account </h1></div>
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
@@ -8,15 +8,17 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.label :username, "Username ", class: "label-class"%>
+    <%= f.text_field :username, class: "form-control" %>
     <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password, "Password ", class: "label-class" %>
+    <%= f.password_field :password, class: "form-control"%>
     <br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirm Password ", class: "label-class" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
     <br>
-    <%= f.submit "Create an account" %>
+    <br>
+    <%= f.submit "Create an account", class: "form-control"  %>
+    
     <% end %>
 </div>

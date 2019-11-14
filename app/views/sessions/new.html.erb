@@ -1,5 +1,5 @@
 <div class = "centering">
-    <h1> Login here </h1>
+    <div style= "color: white"><h1 style = "display: flex; justify-content: center;"> Login here </h1></div>
 
     <% if flash[:alert] %>
         <% flash[:alert].each do |error| %>
@@ -9,18 +9,17 @@
             <br>
     <% end %>
 
-    <%= form_tag sessions_path do %>
-        <%= label_tag :username %>
-        <%= text_field_tag :username %>
+<%= form_tag sessions_path do %>
+        <%= label_tag :username, "Username ", class: "label-class" %>
+        <%= text_field_tag :username, " ",class: "form-control" %>
         <br>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
+        <%= label_tag :password, "Password ", class: "label-class" %>
+        <%= password_field_tag :password , " ",class: "form-control"%>
         <br>
-        <%= submit_tag "Log into account" %>
+        <%= submit_tag "Log into account", class: "form-control" %>
         <% end %>
 
     <br>
     <%= link_to "Create an account", new_user_path %>
-    <br>
     <%= link_to "Continue as guest", home_path %>
 </div>

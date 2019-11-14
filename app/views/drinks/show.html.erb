@@ -9,8 +9,9 @@
     <% if @drink.category == "BEER" %>
         <div style= "color: white"><p>Quantity: <%= @drink.quantity %> pack</p></div>
     <% end %>
+    <br>
     <% if !@drink.stores.empty? %>
-        <div style= "color: white"><p>Available at:</p></div>
+        <div style= "color: white; border-top: solid white 2px;"><p>Available at:</p></div>
         <% @drink.stores.each do |store| %>
             <div style= "color: white"><%= link_to "#{store.name}", store_path(store) %></div>
         <% end %>
