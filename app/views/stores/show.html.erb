@@ -1,9 +1,10 @@
 <%= render 'application/nav_bar' %>
 <div class= "show">
+
 <br>
 <br>
 <div style= "color: white"><h2><%= @store.name %>'s inventory </h2></div>
-<div style= "color: white; border-top: solid white 2px;"></div>
+
 <br>
 
 <% if session[:user_id] == @store.user_id %>

@@ -19,36 +19,36 @@
 
 
  body {
-     margin-top: 80px;
+     margin-top: 90px;
      background-image: url(bookshelf.jpg);
      
  }
- nav {
-    z-index: 10;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100vw;
-    background-color: rgb(145, 0, 0);
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Kaushan Script', cursive;
-}
+//  nav {
+//     z-index: 10;
+//     position: fixed;
+//     top: 50px;
+//     left: 0;
+//     width: 100vw;
+//     background-color: rgb(145, 0, 0);
+//     display: flex;
+//     justify-content: space-around;
+//     font-family: 'Kaushan Script', cursive;
+// }
  
-nav a {
+// nav a {
 
-    z-index: 10;
-    color: white;
-    text-decoration: none;
-    padding: 5px;
-    border-top: solid white 2px;
-    border-left: solid white 2px;
-    border-right: solid white 2px;
-    transition: transform 1s;
-    width: 20em;
-    text-align: center;
+//     z-index: 10;
+//     color: white;
+//     text-decoration: none;
+//     padding: 5px;
+//     border-top: solid white 2px;
+//     border-left: solid white 2px;
+//     border-right: solid white 2px;
+//     transition: transform 1s;
+//     width: 20em;
+//     text-align: center;
  
-   }
+//    }
 
 .box {    
     font-family: 'Kaushan Script', cursive;
@@ -118,7 +118,7 @@ nav a {
 }
 
 .card a {
-    color: red;
+    color:  red;
     font-size: 1.2em;
 }
 .card-container {
@@ -153,4 +153,17 @@ nav a {
     display: flex;
     justify-content: center;
 
+}
+
+.navbar-brand {
+    font-size: 3em;
+}
+
+.nav-link {
+    font-size: 1.3em;
+}
+
+.card-title a {
+    color:  red;
+    font-size: 1.2em;
 }
