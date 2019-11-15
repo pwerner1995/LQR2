@@ -3,8 +3,8 @@
 
     <% if flash[:alert] %>
         <% flash[:alert].each do |error| %>
-            <%= error %>
             <br>
+            <div style= "color: white">❌<%= error %></div>
             <% end %>
             <br>
     <% end %>
