@@ -1,7 +1,5 @@
 <%= render 'application/nav_bar' %>
-
-<div style= "color: white; font-family: 'Kaushan Script', cursive; font-size: 1.3em;"><h1>Wine here </h1></div>
-
+<br>
 <%= form_with url: wine_search_path, method: :get, local:true do %>
      <div style= "color: white; font-family: 'Kaushan Script', cursive; font-size: 1.3em;"><p>Search wines: <%= text_field_tag(:name, params[:search]) %></p></div>
     <%= submit_tag "Search" %>

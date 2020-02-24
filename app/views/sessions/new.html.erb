@@ -1,4 +1,16 @@
 <div class = "centering">
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: rgb(145, 0, 0);font-family: 'Kaushan Script', cursive; opacity: 0.80;">
+  <div class="container">
+   <%= link_to "LQR", home_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<br>
+<br>
+<br>
     <div style= "color: white"><h1 style = "display: flex; justify-content: center;"> Login here </h1></div>
 
     <% if flash[:alert] %>
@@ -11,10 +23,10 @@
 
 <%= form_tag sessions_path do %>
         <%= label_tag :username, "Username ", class: "label-class" %>
-        <%= text_field_tag :username, " ",class: "form-control" %>
+        <%= text_field_tag :username, "",class: "form-control" %>
         <br>
         <%= label_tag :password, "Password ", class: "label-class" %>
-        <%= password_field_tag :password , " ",class: "form-control"%>
+        <%= password_field_tag :password , "",class: "form-control"%>
         <br>
         <%= submit_tag "Log into account", class: "form-control" %>
         <% end %>
