@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 Description: 
-LQR is an alcohol inventory application for store owners to log in and track their inventory as well display their inventory to users. Users who dont log in are able to search and find liquor wine or beer of their choice and see which store has it in stock .
+LQR is an alcohol inventory application for store owners to log in and track their inventory as well as display their inventory to users. Users who don't log in are able to search and find liquor wine or beer of their choice and see which store has it in stock.
 
 Demo: https://www.youtube.com/watch?v=piVRjzmqBrA&t=50s
 
