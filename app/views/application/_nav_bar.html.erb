@@ -1,0 +1,66 @@
+
+<% if loggedin? %>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: rgb(145, 0, 0);font-family: 'Kaushan Script', cursive; opacity: 0.80;">
+  <div class="container">
+   <%= link_to "LQR", home_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <%= link_to "Home", home_path, class:"nav-link" %>
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item active">
+          <%=link_to "Inventory", inventory_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item active">
+          <%=link_to "Stores", stores_path, class:"nav-link" %>
+        </li>
+           <li class="nav-item active">
+         <%= link_to "Log out", sessions_path, method: :delete, class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<% else %>
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: rgb(145, 0, 0);font-family: 'Kaushan Script', cursive; opacity: 0.80;">
+  <div class="container">
+   <%= link_to "LQR", home_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <%= link_to "Home", home_path, class:"nav-link" %>
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Stores", stores_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Beer", beers_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Wine", wines_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Liquor", liquors_path, class:"nav-link" %>
+        </li>
+           <li class="nav-item active">
+         <%= link_to "Login", login_path, class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<% end %>
+

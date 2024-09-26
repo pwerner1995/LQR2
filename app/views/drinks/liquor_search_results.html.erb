@@ -1,0 +1,25 @@
+<%= render 'application/nav_bar' %>
+
+<div style= "color: white"><h1>Liquor here </h1></div>
+
+<%= form_with url: liquor_search_path, method: :get, local:true do %>
+    <div style= "color: white"><p>Search liquor: <%= text_field_tag(:name, params[:search]) %></p></div>
+    <%= submit_tag "Search" %>
+    <% end %>
+    <br>
+
+<div style= "color: white"><strong> Results: </strong></div>
+<br>
+<br>
+
+<div class="card-container">
+    <% @search_results.each do |result| %>
+
+  <div class="card" style="width: 18rem; display: inline-block; background-image: url(<%=result.image%>);">
+    <div class="card-body">
+      <h5 class="card-title"> <%= link_to result.name, drink_path(result) %></h5> 
+    </div>
+  </div>
+
+   <% end %>
+</div>

@@ -1,9 +1,30 @@
-<h1><%= @store.name %>'s inventory </h1>
+<%= render 'application/nav_bar' %>
+<div class= "show">
 
-<% @store_drinks.each do |sd| %>
-    <p>Brand: <%= sd.drink.name %></p>
-    <p>Price: <%= sd.drink.price %></p>
-    <hr>
-    <br>
+<br>
+<br>
+<div style= "color: white"><h2><%= @store.name %>'s inventory </h2></div>
 
+<br>
+
+<% if session[:user_id] == @store.user_id %>
+    <%= render 'inventory_option' %>
+<% else %>
+    <% if !@store_drinks.empty? %>
+        <% @store_drinks.each do |sd| %>
+          <div style= "color: white; border-top: solid white 2px;"></div>
+            <div style= "color: white"><p>Brand: <%= sd.drink.name %></p></div>
+            <div style= "color: white"><p>Price: $<%= sd.drink.price %></p></div>
+            <hr>
+           
+        <% end %>
+    <% else %>
+        <div style= "color: white"><%= "#{@store.name} has no inventory" %></div>
+        <br>
+    <% end %>
 <% end %>
+
+<br>
+<div style= "color: white"><%= link_to "Back to stores", stores_path %></div>
+
+</div>

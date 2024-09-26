@@ -1,0 +1,24 @@
+<%= render 'application/nav_bar' %>
+
+<h1>Create a new drink!</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <%= error %>
+        <br>
+        <% end %>
+        <br>
+<% end %>
+
+<div><%= form_for @drink do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+ <br>
+ <%= f.label :price %>
+ <%= f.text_field :price %>
+ <br>
+ <%= f.submit %>
+<% end %></div>
+<br>
+<div>
+

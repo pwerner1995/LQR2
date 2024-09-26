@@ -1,0 +1,24 @@
+<%= render 'application/nav_bar' %>
+<div style= "color:white; font-family: 'Kaushan Script', cursive;" ><h1>Create a new store!</h1></div>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <%= error %>
+        <br>
+        <% end %>
+        <br>
+<% end %>
+
+<div><%= form_for @store do |f| %>
+ <div style= "color:white; font-family: 'Kaushan Script', cursive;" ><%= f.label :name %></div>
+ <%= f.text_field :name %>
+ <br>
+ <div style= "color:white; font-family: 'Kaushan Script', cursive;" ><%= f.label :location %></div>
+ <%= f.text_field :location %>
+ <br>
+ <div style= "color:white; font-family: 'Kaushan Script', cursive;" ><%= f.submit "Add store" %>
+ <br>
+<% end %></div>
+<br>
+<div>
+

@@ -1,0 +1,34 @@
+<%= render 'application/nav_bar' %>
+
+<div class= "show">
+<div style= "color: white"><h1><%= @drink.name %> </h1></div>
+<br>
+
+    <div style= "color: white"><p>Brand: <%= @drink.name %></p></div>
+    <div style= "color: white"><p>Price: $<%= @drink.price %></p></div>
+    <div style= "color: white"><p>Description: <%= @drink.description %></p></div>
+    <% if @drink.category == "BEER" %>
+        <div style= "color: white"><p>Quantity: <%= @drink.quantity %> pack</p></div>
+    <% end %>
+    <br>
+    <% if !@drink.stores.empty? %>
+        <div style= "color: white; border-top: solid white 2px;"><p>Available at:</p></div>
+        <% @drink.stores.each do |store| %>
+            <div style= "color: white"><%= link_to "#{store.name}", store_path(store) %></div>
+        <% end %>
+    <% else %>
+    <div style= "color: white"><p> Not available in stores near you </p></div>
+    <% end %>
+    <hr>
+    
+    <% if session[:user_id] %>
+    <%= form_with model: @store_drink, :url => create_store_drink_path, method: :post do |f| %>
+        <%= f.collection_select :store_id, @stores, :id, :name %>
+        <%= f.hidden_field :drink_id, :value => @drink.id%>
+        <div style= "color: white"><%= f.submit "Add Drink to Inventory"%></div>
+        <% end %>
+    <% end %>
+
+    <br>
+    <%= link_to "Back to home", home_path %>
+</div>

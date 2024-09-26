@@ -1,0 +1,36 @@
+<%= render 'application/nav_bar' %>
+<div class= "show">
+<br>
+<h1>Your Stores</h1>
+
+<%= form_with url: inventory_search_path, method: :get, local:true do %>
+    <p>Search your stores: <%= text_field_tag(:name, params[:search]) %></p>
+    <%= hidden_field_tag :user_id, session[:user_id] %>
+    <%= submit_tag "Search" %>
+    <% end %>
+    <br>
+<div style= "color: white; border-top: solid white 2px;"></div>
+<br>
+<%= link_to "Add a store", new_store_path %>
+
+
+<hr>
+
+<div class="card-container">
+    <% @stores.each do |s| %>
+
+  <div class="card" style="width: 18rem; display: inline-block; background-image: url(<%=s.image%>);">
+    <div class="card-body">
+      <h5 class="card-title"><%=link_to s.name, store_path(s)%></h5> 
+    </div>
+  </div>
+
+   <% end %>
+</div>
+  
+</div>
+
+
+
+</div>
+
